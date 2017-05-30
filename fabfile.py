@@ -58,4 +58,4 @@ def fetch_tag(version):
 def gitall(message):
     """git一键add和commit"""
     local("git add .")
-    local('git commit -m %s' % message)
+    local('git commit -m "%s"' % message)
