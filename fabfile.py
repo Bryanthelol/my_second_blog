@@ -59,3 +59,9 @@ def gitall(message):
     """git一键add和commit"""
     local("git add .")
     local('git commit -m "%s"' % message)
+
+
+@task
+def sta():
+    """git status的简化命令，从码status的痛苦中解放"""
+    local("git status")
