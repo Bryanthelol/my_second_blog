@@ -9,7 +9,6 @@ def install(requirements_env="dev"):
     local("pip3 install -r requirements/%s.txt" % requirements_env)
 
 
-# 下面的函数作用是简化一些开发时的常用命令
 @task
 def runser():
     """运行本地服务器"""
@@ -65,3 +64,9 @@ def gitall(message):
 def sta():
     """git status的简化命令，从码status的痛苦中解放"""
     local("git status")
+
+
+@task
+def test():
+    """运行测试"""
+    local("./manage.py test")
