@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # 我的应用：homepage着陆页
     'homepage',
+
+    # 我的应用：blog博客内容部分
+    'blog',
 ]
 
 MIDDLEWARE = [
