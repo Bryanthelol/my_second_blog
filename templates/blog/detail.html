@@ -1,0 +1,15 @@
+{% extends 'homepage/base.html' %}
+
+<html>
+    <head>
+        <title>{{ blog_detail.title }}</title>
+    </head>
+    <body>
+        <h2>{{ blog_detail.title }}</h2>
+        <p>{{ blog_detail.body }}</p>
+        <p>{{ blog_detail.posted }}
+            - By
+            {{ blog_detail.author }}</p>
+    </body>
+
+</html>

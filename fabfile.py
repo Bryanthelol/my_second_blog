@@ -67,6 +67,12 @@ def sta():
 
 
 @task
-def test():
-    """运行测试"""
+def unitest():
+    """运行各个测试"""
     local("./manage.py test")
+
+
+@task
+def funtest():
+    """运行功能测试"""
+    local("./functional_test/test_homepage.py")

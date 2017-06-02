@@ -2,7 +2,7 @@
 
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models import permalink
+from django.urls import reverse
 from django.utils.translation import ugettext_lazy as lazy
 
 
@@ -25,6 +25,5 @@ class Blog(models.Model):
     def __str__(self):
         return '%s' % (self.title)
 
-    @permalink
     def get_absolute_url(self):
-        return 'blog_view', None, {'slug': self.slug}
+        return reverse('blog:blog_detail', kwargs={'my_args': self.id})

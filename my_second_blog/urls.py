@@ -22,4 +22,7 @@ urlpatterns = [
 
     # 定义应用homepage的基础URL
     url(r'', include('homepage.urls', namespace='homepage')),
+
+    # 定义应用blog的基础URL
+    url(r'^blog/', include('blog.urls', namespace='blog')),
 ]

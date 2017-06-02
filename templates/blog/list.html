@@ -1,0 +1,22 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+    <div class="container blog-list">
+        <div class="row">
+            {% for blog in blog_lists %}
+                <div class="col-sm-12">
+                    <h2>
+                        <a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a>
+                    </h2>
+                    {{ blog.body | slice:":80" }}
+                    {{ blog.posted }}
+                    - By
+                    {{ blog.author }}
+                </div>
+                {% empty %}
+                <p>暂时还没发布文章！如人生一样空空如也呐……</p>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
