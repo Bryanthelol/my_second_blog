@@ -152,5 +152,5 @@ if os.getcwd() == '/app':
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # 支持所有主机头
-    ALLOWED_HOSTS = ['*']
+    ALLOWED_HOSTS = ['heyulong.herokuapp.com']
     DEBUG = False
