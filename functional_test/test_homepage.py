@@ -8,7 +8,7 @@ from selenium import webdriver
 class HomepageTestCase(StaticLiveServerTestCase):
 
     def setUp(self):
-        self.selenium = webdriver.Safari()
+        self.selenium = webdriver.Chrome()
         self.selenium.maxmize_window()
         self.user = User.objects.creat_user(username='bryant', email='w@bryant.com',
                                             password='heyulong')

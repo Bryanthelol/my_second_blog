@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # 第三方应用
+    'bootstrap3',
+
     # 我的应用：homepage着陆页
     'homepage',
 
@@ -125,7 +128,29 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # 设置静态文件的目录为相对状态，以让Django识别
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/')
+    os.path.join(BASE_DIR, 'static'),
 ),
+
+# django - bootstrap3的设置
+BOOTSTRAP3 = {
+    'include_jquery': True,
+}
+
+# 针对 Heroku 的设置
+if os.getcwd() == '/app':
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(default='postgres://localhost')
+    }
+
+    # 让 request.is_secure() 承认 X-Forwarded-Proto 头
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+    # 支持所有主机头
+    ALLOWED_HOSTS = ['*']
+
+    # 静态资产配置
+    STATIC_ROOT = 'staticfiles'

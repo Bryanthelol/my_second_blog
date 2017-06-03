@@ -76,3 +76,17 @@ def unitest():
 def funtest():
     """运行功能测试"""
     local("./functional_test/test_homepage.py")
+
+
+@task
+def deployrequire():
+    """在活动的虚拟环境中安装部署的支持软件"""
+    # 帮助Django与Heroku使用的数据库进行通信
+    local("pip3 install dj-database-url")
+
+    # 这两个包帮助Django正确地管理静态文件
+    local("pip3 install dj-static")
+    local("pip3 install static3")
+
+    # gunicorn是服务器软件，能在在线环境中支持应用程序提供的服务
+    local("pip3 install gunicorn")
