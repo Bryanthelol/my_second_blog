@@ -128,11 +128,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = 'staticfiles'
+
 
 # 设置静态文件的目录为相对状态，以让Django识别
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
-),
+)
 
 # django - bootstrap3的设置
 BOOTSTRAP3 = {
@@ -151,6 +153,4 @@ if os.getcwd() == '/app':
 
     # 支持所有主机头
     ALLOWED_HOSTS = ['*']
-
-    # 静态资产配置
-    STATIC_ROOT = 'staticfiles'
+    DEBUG = False
