@@ -12,4 +12,4 @@ def blog_detail(request, my_args):
     """文章详情页"""
     blog_detail = get_object_or_404(Blog, id=my_args)
     context = {'blog_detail': blog_detail}
-    return render(request, 'blog/detail.html', context)
+    return render(request, 'blog/detail.html', context=context)

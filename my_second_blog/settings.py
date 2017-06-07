@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     # 第三方应用
     'bootstrap3',
 
+    # 第三方应用
+    'rest_framework',
+
     # 我的应用：homepage着陆页
     'homepage',
 
@@ -139,6 +142,13 @@ STATICFILES_DIRS = (
 # django - bootstrap3的设置
 BOOTSTRAP3 = {
     'include_jquery': True,
+}
+
+# rest_framework的设置
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }
 
 # 针对 Heroku 的设置
